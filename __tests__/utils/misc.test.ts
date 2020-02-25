@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { isTargetEvent } from '@technote-space/filter-github-action';
 import { testEnv, getContext } from '@technote-space/github-action-test-helper';
-import { getMinorUpdateCommitTypes, getBreakingChangeNotes } from '../../src/utils/misc';
+import { getMinorUpdateCommitTypes, getExcludeMessages, getBreakingChangeNotes } from '../../src/utils/misc';
 import { TARGET_EVENTS } from '../../src/constant';
 
 const rootDir = resolve(__dirname, '../..');
@@ -57,6 +57,19 @@ describe('getMinorUpdateCommitTypes', () => {
 	it('should get minor update commit types', () => {
 		process.env.INPUT_MINOR_UPDATE_TYPES = 'test1, test2\ntest3';
 		expect(getMinorUpdateCommitTypes()).toEqual(['test1', 'test2', 'test3']);
+	});
+});
+
+describe('getExcludeMessages', () => {
+	testEnv(rootDir);
+
+	it('should get default minor update commit types', () => {
+		expect(getExcludeMessages()).toEqual([]);
+	});
+
+	it('should get minor update commit types', () => {
+		process.env.INPUT_EXCLUDE_MESSAGES = 'test1, test2\ntest3';
+		expect(getExcludeMessages()).toEqual(['test1', 'test2', 'test3']);
 	});
 });
 

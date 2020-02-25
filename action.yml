@@ -12,6 +12,9 @@ inputs:
     description: Minor update commit types
     default: feat
     required: false
+  EXCLUDE_MESSAGES:
+    description: Exclude messages
+    required: false
   BREAKING_CHANGE_NOTES:
     description: Breaking change notes
     default: BREAKING CHANGE

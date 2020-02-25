@@ -66,9 +66,10 @@ describe('execute', () => {
 	});
 
 	it('should run 2', async() => {
-		process.env.INPUT_GITHUB_TOKEN = 'token';
-		process.env.INPUT_SET_ENV_NAME = '';
-		const mockStdout               = spyOnStdout();
+		process.env.INPUT_GITHUB_TOKEN     = 'token';
+		process.env.INPUT_SET_ENV_NAME     = '';
+		process.env.INPUT_EXCLUDE_MESSAGES = 'add new feature3';
+		const mockStdout                   = spyOnStdout();
 
 		nock('https://api.github.com')
 			.persist()
@@ -86,11 +87,6 @@ describe('execute', () => {
 					'type': 'feat',
 					'message': 'add new features',
 					'sha': '3dcb09b5b57875f334f61aebed695e2e4193db5e',
-				},
-				{
-					'type': 'feat',
-					'message': 'add new feature3',
-					'sha': '4dcb09b5b57875f334f61aebed695e2e4193db5e',
 				},
 			]),
 			'::endgroup::',
