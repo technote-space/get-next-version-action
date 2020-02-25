@@ -1,0 +1,36 @@
+name: Get Next Version Action
+
+description: GitHub Actions to get next version from commit histories.
+
+author: technote-space
+
+inputs:
+  GITHUB_TOKEN:
+    description: Secret GitHub API token to use for making API requests.
+    required: true
+  MINOR_UPDATE_TYPES:
+    description: Minor update commit types
+    default: feat
+    required: false
+  BREAKING_CHANGE_NOTES:
+    description: Breaking change notes
+    default: BREAKING CHANGE
+    required: false
+  SET_ENV_NAME:
+    description: Env name.
+    default: NEXT_VERSION
+    required: false
+
+outputs:
+  current:
+    description: next version
+  next:
+    description: next version
+
+branding:
+  icon: 'info'
+  color: 'green'
+
+runs:
+  using: node12
+  main: lib/main.js
