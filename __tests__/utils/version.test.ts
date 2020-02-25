@@ -68,7 +68,7 @@ describe('getNextVersion', () => {
 			.get('/repos/hello/world/pulls/123/commits')
 			.reply(200, () => getApiFixture(fixtureRootDir, 'commit.list1'));
 
-		expect(await getNextVersion(helper, octokit, context)).toBe('v0.0.1');
+		expect(await getNextVersion(logger, helper, octokit, context)).toBe('v0.0.1');
 	});
 
 	it('should get next version 2', async() => {
@@ -79,7 +79,7 @@ describe('getNextVersion', () => {
 			.get('/repos/hello/world/pulls/123/commits')
 			.reply(200, () => getApiFixture(fixtureRootDir, 'commit.list2'));
 
-		expect(await getNextVersion(helper, octokit, context)).toBe('v3.0.0');
+		expect(await getNextVersion(logger, helper, octokit, context)).toBe('v3.0.0');
 	});
 
 	it('should get next version 3', async() => {
@@ -90,6 +90,6 @@ describe('getNextVersion', () => {
 			.get('/repos/hello/world/pulls/123/commits')
 			.reply(200, () => getApiFixture(fixtureRootDir, 'commit.list3'));
 
-		expect(await getNextVersion(helper, octokit, context)).toBe('v2.1.0');
+		expect(await getNextVersion(logger, helper, octokit, context)).toBe('v2.1.0');
 	});
 });

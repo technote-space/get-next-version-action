@@ -12,19 +12,11 @@ const setResult = (current: string, next: string): void => {
 	}
 };
 
-const dumpResult = (current: string, next: string, logger: Logger): void => {
-	logger.startProcess('Dump output');
-	console.log('current version: ', current);
-	console.log('next version: ', next);
-	logger.endProcess();
-};
-
 export const execute = async(logger: Logger, context: Context): Promise<void> => {
 	const octokit = Utils.getOctokit();
 	const helper  = new ApiHelper(octokit, context, logger);
 	const current = await getCurrentVersion(helper);
-	const next    = await getNextVersion(helper, octokit, context);
+	const next    = await getNextVersion(logger, helper, octokit, context);
 
 	setResult(current, next);
-	dumpResult(current, next, logger);
 };

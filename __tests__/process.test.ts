@@ -10,6 +10,7 @@ import {
 	spyOnStdout,
 	stdoutCalledWith,
 	testChildProcess,
+	getLogStdout,
 } from '@technote-space/github-action-test-helper';
 import { execute } from '../src/process';
 
@@ -54,12 +55,13 @@ describe('execute', () => {
 		await execute(logger, context);
 
 		stdoutCalledWith(mockStdout, [
+			'::group::Target commits:',
+			'[]',
+			'::endgroup::',
+			'> Current version: v2.0.0',
+			'> Next version: v2.0.1',
 			'::set-output name=current::v2.0.0',
 			'::set-output name=next::v2.0.1',
-			'::group::Dump output',
-			'"current version: "',
-			'"next version: "',
-			'::endgroup::',
 		]);
 	});
 
@@ -78,12 +80,24 @@ describe('execute', () => {
 		await execute(logger, context);
 
 		stdoutCalledWith(mockStdout, [
+			'::group::Target commits:',
+			getLogStdout([
+				{
+					'type': 'feat',
+					'message': 'add new features',
+					'sha': '3dcb09b5b57875f334f61aebed695e2e4193db5e',
+				},
+				{
+					'type': 'feat',
+					'message': 'add new feature3',
+					'sha': '4dcb09b5b57875f334f61aebed695e2e4193db5e',
+				},
+			]),
+			'::endgroup::',
+			'> Current version: v2.0.0',
+			'> Next version: v3.0.0',
 			'::set-output name=current::v2.0.0',
 			'::set-output name=next::v3.0.0',
-			'::group::Dump output',
-			'"current version: "',
-			'"next version: "',
-			'::endgroup::',
 		]);
 	});
 
@@ -101,13 +115,20 @@ describe('execute', () => {
 		await execute(logger, context);
 
 		stdoutCalledWith(mockStdout, [
+			'::group::Target commits:',
+			getLogStdout([
+				{
+					'type': 'feat',
+					'message': 'add new feature3',
+					'sha': '4dcb09b5b57875f334f61aebed695e2e4193db5e',
+				},
+			]),
+			'::endgroup::',
+			'> Current version: v2.0.0',
+			'> Next version: v2.1.0',
 			'::set-output name=current::v2.0.0',
 			'::set-output name=next::v2.1.0',
 			'::set-env name=NEXT_VERSION::v2.1.0',
-			'::group::Dump output',
-			'"current version: "',
-			'"next version: "',
-			'::endgroup::',
 		]);
 	});
 });
