@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { isTargetEvent } from '@technote-space/filter-github-action';
 import { testEnv, getContext } from '@technote-space/github-action-test-helper';
-import { getMinorUpdateCommitTypes, getBreakingChangeNotes, getCommitType } from '../../src/utils/misc';
+import { getMinorUpdateCommitTypes, getBreakingChangeNotes } from '../../src/utils/misc';
 import { TARGET_EVENTS } from '../../src/constant';
 
 const rootDir = resolve(__dirname, '../..');
@@ -70,19 +70,5 @@ describe('getBreakingChangeNotes', () => {
 	it('should get breaking change notes', () => {
 		process.env.INPUT_BREAKING_CHANGE_NOTES = 'test1, test2\ntest3';
 		expect(getBreakingChangeNotes()).toEqual(['test1', 'test2', 'test3']);
-	});
-});
-
-describe('getCommitType', () => {
-	it('should get commit type', () => {
-		expect(getCommitType('feat: test message')).toBe('feat');
-		expect(getCommitType('chore: test message')).toBe('chore');
-		expect(getCommitType('docs!: test message')).toBe('docs');
-		expect(getCommitType('BREAKING CHANGE: test message')).toBe('BREAKING CHANGE');
-	});
-
-	it('should return empty', () => {
-		expect(getCommitType('')).toBeUndefined();
-		expect(getCommitType('test message')).toBeUndefined();
 	});
 });
