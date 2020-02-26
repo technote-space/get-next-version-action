@@ -63,7 +63,7 @@ default: `'feat'`
 
 ### EXCLUDE_MESSAGES
 除外するコミットメッセージ  
-default: ``
+default: `''`  
 e.g.
 ```
 EXCLUDE_MESSAGES: |
