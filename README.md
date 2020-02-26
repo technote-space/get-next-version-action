@@ -14,9 +14,14 @@ GitHub Actions to get next version from commit histories.
 <details>
 <summary>Details</summary>
 
-- [Setup](#setup)
-  - [yarn](#yarn)
-  - [npm](#npm)
+- [Usage](#usage)
+- [Options](#options)
+  - [MINOR_UPDATE_TYPES](#minor_update_types)
+  - [EXCLUDE_MESSAGES](#exclude_messages)
+  - [BREAKING_CHANGE_NOTES](#breaking_change_notes)
+  - [SET_ENV_NAME](#set_env_name)
+- [Action event details](#action-event-details)
+  - [Target events](#target-events)
 - [Author](#author)
 
 </details>
