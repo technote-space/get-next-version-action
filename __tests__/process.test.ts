@@ -86,6 +86,9 @@ describe('execute', () => {
 				{
 					'type': 'feat',
 					'message': 'add new features',
+					'notes': [
+						'BREAKING CHANGE: changed',
+					],
 					'sha': '3dcb09b5b57875f334f61aebed695e2e4193db5e',
 				},
 			]),
@@ -116,6 +119,7 @@ describe('execute', () => {
 				{
 					'type': 'feat',
 					'message': 'add new feature3',
+					'notes': [],
 					'sha': '4dcb09b5b57875f334f61aebed695e2e4193db5e',
 				},
 			]),
