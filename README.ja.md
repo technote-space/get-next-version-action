@@ -5,7 +5,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/technote-space/get-next-version-action/badge)](https://www.codefactor.io/repository/github/technote-space/get-next-version-action)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/get-next-version-action/blob/master/LICENSE)
 
-GitHub Actions to get next version from commit histories.
+コミット履歴から次のバージョンを取得するための GitHub Actions です。
 
 ## Table of Contents
 
@@ -14,21 +14,21 @@ GitHub Actions to get next version from commit histories.
 <details>
 <summary>Details</summary>
 
-- [Usage](#usage)
+- [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
 - [Options](#options)
   - [MINOR_UPDATE_TYPES](#minor_update_types)
   - [EXCLUDE_MESSAGES](#exclude_messages)
   - [BREAKING_CHANGE_NOTES](#breaking_change_notes)
   - [SET_ENV_NAME](#set_env_name)
-- [Action event details](#action-event-details)
-  - [Target events](#target-events)
+- [Action イベント詳細](#action-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E8%A9%B3%E7%B4%B0)
+  - [対象イベント](#%E5%AF%BE%E8%B1%A1%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88)
 - [Author](#author)
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Usage
-e.g. Add release tag
+## 使用方法
+例：リリースタグを付与
 ```yaml
 on:
   pull_request:
@@ -62,12 +62,12 @@ jobs:
 
 ## Options
 ### MINOR_UPDATE_TYPES
-Minor update commit types.  
+マイナーアップデートのコミットタイプ  
 default: `'feat'`  
-e.g. `'feat, refactor'`
+例：`'feat, refactor'`
 
 ### EXCLUDE_MESSAGES
-Exclude messages.  
+除外するコミットメッセージ  
 default: `''`  
 e.g.
 ```
@@ -76,20 +76,20 @@ EXCLUDE_MESSAGES: |
   trivial changes      
 ```  
 
-In the example above, the next commits are ignored.
+上の例の場合、次のコミットは無視されます。
 - chore: tweaks
 - style: trivial changes
 
 ### BREAKING_CHANGE_NOTES
-Breaking change notes.  
+破壊的変更を示すキーワード  
 default: `'BREAKING CHANGE'`
 
 ### SET_ENV_NAME
-Env name.  
+環境変数名  
 default: `'NEXT_VERSION'`
 
-## Action event details
-### Target events
+## Action イベント詳細
+### 対象イベント
 | eventName | action |
 |:---:|:---:|
 |pull_request|opened, reopened, synchronize, closed|
