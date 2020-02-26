@@ -68,7 +68,7 @@ e.g. `'feat, refactor'`
 
 ### EXCLUDE_MESSAGES
 Exclude messages.  
-default: ``
+default: `''`  
 e.g.
 ```
 EXCLUDE_MESSAGES: |
