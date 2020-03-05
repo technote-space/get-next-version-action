@@ -18,10 +18,7 @@
 
 - [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
 - [Options](#options)
-  - [MINOR_UPDATE_TYPES](#minor_update_types)
-  - [EXCLUDE_MESSAGES](#exclude_messages)
-  - [BREAKING_CHANGE_NOTES](#breaking_change_notes)
-  - [SET_ENV_NAME](#set_env_name)
+- [Outputs](#outputs)
 - [Action イベント詳細](#action-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E8%A9%B3%E7%B4%B0)
   - [対象イベント](#%E5%AF%BE%E8%B1%A1%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88)
 - [Author](#author)
@@ -48,8 +45,6 @@ jobs:
     steps:
       - name: Get next version
         uses: technote-space/get-next-version-action@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/github-script@0.4.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -63,32 +58,19 @@ jobs:
 ```
 
 ## Options
-### MINOR_UPDATE_TYPES
-マイナーアップデートのコミットタイプ  
-default: `'feat'`  
-例：`'feat, refactor'`
+| name | description | default | required | e.g. |
+|:---:|:---|:---:|:---:|:---:|
+|MINOR_UPDATE_TYPES|マイナーアップデートのコミットタイプ|`feat`| |`feat, refactor`|
+|EXCLUDE_MESSAGES|除外するコミットメッセージ| | |`tweaks`|
+|BREAKING_CHANGE_NOTES|破壊的変更を示すキーワード|`BREAKING CHANGE`| |`BREAKING`|
+|SET_ENV_NAME|環境変数名|`NEXT_VERSION`| |`NEW_TAG`|
+|GITHUB_TOKEN|アクセストークン|`${{github.token}}`|true|`${{secrets.ACCESS_TOKEN}}`|
 
-### EXCLUDE_MESSAGES
-除外するコミットメッセージ  
-default: `''`  
-e.g.
-```
-EXCLUDE_MESSAGES: |
-  tweaks
-  trivial changes      
-```  
-
-上の例の場合、次のコミットは無視されます。
-- chore: tweaks
-- style: trivial changes
-
-### BREAKING_CHANGE_NOTES
-破壊的変更を示すキーワード  
-default: `'BREAKING CHANGE'`
-
-### SET_ENV_NAME
-環境変数名  
-default: `'NEXT_VERSION'`
+## Outputs
+| name | description | e.g. |
+|:---:|:---|:---:|
+|current|現在のバージョン|`v1.2.3`|
+|next|次のバージョン|`v1.3.0`|
 
 ## Action イベント詳細
 ### 対象イベント
