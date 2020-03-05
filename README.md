@@ -69,6 +69,12 @@ jobs:
 |SET_ENV_NAME|Env name|`NEXT_VERSION`| |`NEW_TAG`|
 |GITHUB_TOKEN|Access token|`${{github.token}}`|true|`${{secrets.ACCESS_TOKEN}}`|
 
+## Outputs
+| name | description | e.g. |
+|:---:|:---|:---:|
+|current|current version|`v1.2.3`|
+|next|next version|`v1.3.0`|
+
 ## Action event details
 ### Target events
 | eventName | action |
