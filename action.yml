@@ -27,7 +27,7 @@ inputs:
 
 outputs:
   current:
-    description: next version
+    description: current version
   next:
     description: next version
 

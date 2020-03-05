@@ -18,10 +18,7 @@ GitHub Actions to get next version from commit histories.
 
 - [Usage](#usage)
 - [Options](#options)
-  - [MINOR_UPDATE_TYPES](#minor_update_types)
-  - [EXCLUDE_MESSAGES](#exclude_messages)
-  - [BREAKING_CHANGE_NOTES](#breaking_change_notes)
-  - [SET_ENV_NAME](#set_env_name)
+- [Outputs](#outputs)
 - [Action event details](#action-event-details)
   - [Target events](#target-events)
 - [Author](#author)
@@ -61,32 +58,19 @@ jobs:
 ```
 
 ## Options
-### MINOR_UPDATE_TYPES
-Minor update commit types.  
-default: `'feat'`  
-e.g. `'feat, refactor'`
+| name | description | default | required | e.g. |
+|:---:|:---|:---:|:---:|:---:|
+|MINOR_UPDATE_TYPES|Minor update commit types|`feat`| |`feat, refactor`|
+|EXCLUDE_MESSAGES|Exclude messages| | |`tweaks`|
+|BREAKING_CHANGE_NOTES|Breaking change notes|`BREAKING CHANGE`| |`BREAKING`|
+|SET_ENV_NAME|Env name|`NEXT_VERSION`| |`NEW_TAG`|
+|GITHUB_TOKEN|Access token|`${{github.token}}`|true|`${{secrets.ACCESS_TOKEN}}`|
 
-### EXCLUDE_MESSAGES
-Exclude messages.  
-default: `''`  
-e.g.
-```
-EXCLUDE_MESSAGES: |
-  tweaks
-  trivial changes      
-```  
-
-In the example above, the next commits are ignored.
-- chore: tweaks
-- style: trivial changes
-
-### BREAKING_CHANGE_NOTES
-Breaking change notes.  
-default: `'BREAKING CHANGE'`
-
-### SET_ENV_NAME
-Env name.  
-default: `'NEXT_VERSION'`
+## Outputs
+| name | description | e.g. |
+|:---:|:---|:---:|
+|current|current version|`v1.2.3`|
+|next|next version|`v1.3.0`|
 
 ## Action event details
 ### Target events
