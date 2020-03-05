@@ -61,32 +61,13 @@ jobs:
 ```
 
 ## Options
-### MINOR_UPDATE_TYPES
-Minor update commit types.  
-default: `'feat'`  
-e.g. `'feat, refactor'`
-
-### EXCLUDE_MESSAGES
-Exclude messages.  
-default: `''`  
-e.g.
-```
-EXCLUDE_MESSAGES: |
-  tweaks
-  trivial changes      
-```  
-
-In the example above, the next commits are ignored.
-- chore: tweaks
-- style: trivial changes
-
-### BREAKING_CHANGE_NOTES
-Breaking change notes.  
-default: `'BREAKING CHANGE'`
-
-### SET_ENV_NAME
-Env name.  
-default: `'NEXT_VERSION'`
+| name | description | default | required | e.g. |
+|:---:|:---|:---:|:---:|:---:|
+|MINOR_UPDATE_TYPES|Minor update commit types|`feat`| |`feat, refactor`|
+|EXCLUDE_MESSAGES|Exclude messages| | |`tweaks`|
+|BREAKING_CHANGE_NOTES|Breaking change notes|`BREAKING CHANGE`| |`BREAKING`|
+|SET_ENV_NAME|Env name|`NEXT_VERSION`| |`NEW_TAG`|
+|GITHUB_TOKEN|Access token|`${{github.token}}`|true|`${{secrets.ACCESS_TOKEN}}`|
 
 ## Action event details
 ### Target events

@@ -61,32 +61,13 @@ jobs:
 ```
 
 ## Options
-### MINOR_UPDATE_TYPES
-マイナーアップデートのコミットタイプ  
-default: `'feat'`  
-例：`'feat, refactor'`
-
-### EXCLUDE_MESSAGES
-除外するコミットメッセージ  
-default: `''`  
-e.g.
-```
-EXCLUDE_MESSAGES: |
-  tweaks
-  trivial changes      
-```  
-
-上の例の場合、次のコミットは無視されます。
-- chore: tweaks
-- style: trivial changes
-
-### BREAKING_CHANGE_NOTES
-破壊的変更を示すキーワード  
-default: `'BREAKING CHANGE'`
-
-### SET_ENV_NAME
-環境変数名  
-default: `'NEXT_VERSION'`
+| name | description | default | required | e.g. |
+|:---:|:---|:---:|:---:|:---:|
+|MINOR_UPDATE_TYPES|マイナーアップデートのコミットタイプ|`feat`| |`feat, refactor`|
+|EXCLUDE_MESSAGES|除外するコミットメッセージ| | |`tweaks`|
+|BREAKING_CHANGE_NOTES|破壊的変更を示すキーワード|`BREAKING CHANGE`| |`BREAKING`|
+|SET_ENV_NAME|環境変数名|`NEXT_VERSION`| |`NEW_TAG`|
+|GITHUB_TOKEN|アクセストークン|`${{github.token}}`|true|`${{secrets.ACCESS_TOKEN}}`|
 
 ## Action イベント詳細
 ### 対象イベント
