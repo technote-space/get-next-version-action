@@ -18,10 +18,7 @@
 
 - [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
 - [Options](#options)
-  - [MINOR_UPDATE_TYPES](#minor_update_types)
-  - [EXCLUDE_MESSAGES](#exclude_messages)
-  - [BREAKING_CHANGE_NOTES](#breaking_change_notes)
-  - [SET_ENV_NAME](#set_env_name)
+- [Outputs](#outputs)
 - [Action イベント詳細](#action-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E8%A9%B3%E7%B4%B0)
   - [対象イベント](#%E5%AF%BE%E8%B1%A1%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88)
 - [Author](#author)

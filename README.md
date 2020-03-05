@@ -18,10 +18,7 @@ GitHub Actions to get next version from commit histories.
 
 - [Usage](#usage)
 - [Options](#options)
-  - [MINOR_UPDATE_TYPES](#minor_update_types)
-  - [EXCLUDE_MESSAGES](#exclude_messages)
-  - [BREAKING_CHANGE_NOTES](#breaking_change_notes)
-  - [SET_ENV_NAME](#set_env_name)
+- [Outputs](#outputs)
 - [Action event details](#action-event-details)
   - [Target events](#target-events)
 - [Author](#author)
