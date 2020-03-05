@@ -48,8 +48,6 @@ jobs:
     steps:
       - name: Get next version
         uses: technote-space/get-next-version-action@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/github-script@0.4.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
