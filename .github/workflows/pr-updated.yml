@@ -63,7 +63,6 @@ jobs:
       - name: Get version
         uses: technote-space/get-next-version-action@gh-actions
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EXCLUDE_MESSAGES: |
             update package version
             update packages
