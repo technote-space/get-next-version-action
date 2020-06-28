@@ -1,8 +1,8 @@
-import { Context } from '@actions/github/lib/context';
-import { Octokit } from '@octokit/rest';
-import { Version } from '@technote-space/github-action-version-helper';
-import { Logger, ApiHelper } from '@technote-space/github-action-helper';
-import { getBreakingChangeNotes, getExcludeMessages, getMinorUpdateCommitTypes } from './misc';
+import {Context} from '@actions/github/lib/context';
+import {Octokit} from '@technote-space/github-action-helper/dist/types';
+import {Version} from '@technote-space/github-action-version-helper';
+import {Logger, ApiHelper} from '@technote-space/github-action-helper';
+import {getBreakingChangeNotes, getExcludeMessages, getMinorUpdateCommitTypes} from './misc';
 
 export const getCurrentVersion = async(helper: ApiHelper): Promise<string> => Version.getCurrentVersion(helper);
 
