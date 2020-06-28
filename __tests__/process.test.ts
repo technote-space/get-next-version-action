@@ -47,7 +47,7 @@ describe('execute', () => {
 
     nock('https://api.github.com')
       .persist()
-      .get('/repos/hello/world/git/matching-refs/tags/')
+      .get('/repos/hello/world/git/matching-refs/tags%2F')
       .reply(200, () => getApiFixture(fixtureRootDir, 'repos.git.matching-refs'))
       .get('/repos/hello/world/pulls/123/commits')
       .reply(200, () => getApiFixture(fixtureRootDir, 'commit.list1'));
@@ -73,7 +73,7 @@ describe('execute', () => {
 
     nock('https://api.github.com')
       .persist()
-      .get('/repos/hello/world/git/matching-refs/tags/')
+      .get('/repos/hello/world/git/matching-refs/tags%2F')
       .reply(200, () => getApiFixture(fixtureRootDir, 'repos.git.matching-refs'))
       .get('/repos/hello/world/pulls/123/commits')
       .reply(200, () => getApiFixture(fixtureRootDir, 'commit.list2'));
@@ -106,7 +106,7 @@ describe('execute', () => {
 
     nock('https://api.github.com')
       .persist()
-      .get('/repos/hello/world/git/matching-refs/tags/')
+      .get('/repos/hello/world/git/matching-refs/tags%2F')
       .reply(200, () => getApiFixture(fixtureRootDir, 'repos.git.matching-refs'))
       .get('/repos/hello/world/pulls/123/commits')
       .reply(200, () => getApiFixture(fixtureRootDir, 'commit.list3'));

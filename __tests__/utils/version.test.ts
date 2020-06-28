@@ -40,7 +40,7 @@ describe('getCurrentVersion', () => {
   it('should get current version 1', async() => {
     nock('https://api.github.com')
       .persist()
-      .get('/repos/hello/world/git/matching-refs/tags/')
+      .get('/repos/hello/world/git/matching-refs/tags%2F')
       .reply(200, () => getApiFixture(fixtureRootDir, 'repos.git.matching-refs'));
 
     expect(await getCurrentVersion(helper)).toBe('v2.0.0');
@@ -49,7 +49,7 @@ describe('getCurrentVersion', () => {
   it('should get current version 2', async() => {
     nock('https://api.github.com')
       .persist()
-      .get('/repos/hello/world/git/matching-refs/tags/')
+      .get('/repos/hello/world/git/matching-refs/tags%2F')
       .reply(200, () => []);
 
     expect(await getCurrentVersion(helper)).toBe('v0.0.0');
@@ -63,7 +63,7 @@ describe('getNextVersion', () => {
   it('should get next version 1', async() => {
     nock('https://api.github.com')
       .persist()
-      .get('/repos/hello/world/git/matching-refs/tags/')
+      .get('/repos/hello/world/git/matching-refs/tags%2F')
       .reply(200, () => [])
       .get('/repos/hello/world/pulls/123/commits')
       .reply(200, () => getApiFixture(fixtureRootDir, 'commit.list1'));
@@ -74,7 +74,7 @@ describe('getNextVersion', () => {
   it('should get next version 2', async() => {
     nock('https://api.github.com')
       .persist()
-      .get('/repos/hello/world/git/matching-refs/tags/')
+      .get('/repos/hello/world/git/matching-refs/tags%2F')
       .reply(200, () => getApiFixture(fixtureRootDir, 'repos.git.matching-refs'))
       .get('/repos/hello/world/pulls/123/commits')
       .reply(200, () => getApiFixture(fixtureRootDir, 'commit.list2'));
@@ -85,7 +85,7 @@ describe('getNextVersion', () => {
   it('should get next version 3', async() => {
     nock('https://api.github.com')
       .persist()
-      .get('/repos/hello/world/git/matching-refs/tags/')
+      .get('/repos/hello/world/git/matching-refs/tags%2F')
       .reply(200, () => getApiFixture(fixtureRootDir, 'repos.git.matching-refs'))
       .get('/repos/hello/world/pulls/123/commits')
       .reply(200, () => getApiFixture(fixtureRootDir, 'commit.list3'));
