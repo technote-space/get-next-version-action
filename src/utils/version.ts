@@ -1,5 +1,5 @@
 import {Context} from '@actions/github/lib/context';
-import {Octokit} from '@octokit/rest';
+import {Octokit} from '@technote-space/github-action-helper/dist/types';
 import {Version} from '@technote-space/github-action-version-helper';
 import {Logger, ApiHelper} from '@technote-space/github-action-helper';
 import {getBreakingChangeNotes, getExcludeMessages, getMinorUpdateCommitTypes} from './misc';
