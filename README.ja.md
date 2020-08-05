@@ -76,7 +76,7 @@ jobs:
 ### 対象イベント
 | eventName | action |
 |:---:|:---:|
-|pull_request|opened, reopened, synchronize, closed|
+|pull_request, pull_request_target|opened, reopened, synchronize, closed|
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
