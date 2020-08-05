@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/get-next-version-action",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "GitHub Actions to get next version from commit histories.",
   "author": {
     "name": "Technote",
