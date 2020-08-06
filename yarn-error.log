@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@octokit/core/-/core-3.1.2.tgz: Request failed "404 Not Found"
+  Error: https://registry.yarnpkg.com/@actions/http-client/-/http-client-1.0.8.tgz: Request failed "404 Not Found"
       at ResponseError.ExtendableBuiltin (/usr/share/yarn/lib/cli.js:696:66)
       at new ResponseError (/usr/share/yarn/lib/cli.js:802:124)
       at Request.<anonymous> (/usr/share/yarn/lib/cli.js:67057:16)
