@@ -11,6 +11,8 @@ import {
   stdoutCalledWith,
   testChildProcess,
   getLogStdout,
+  spyOnExportVariable,
+  exportVariableCalledWith,
 } from '@technote-space/github-action-test-helper';
 import {execute} from '../src/process';
 
@@ -103,6 +105,7 @@ describe('execute', () => {
   it('should run 3', async() => {
     process.env.INPUT_GITHUB_TOKEN = 'token';
     const mockStdout               = spyOnStdout();
+    const mockEnv                  = spyOnExportVariable();
 
     nock('https://api.github.com')
       .persist()
@@ -128,7 +131,9 @@ describe('execute', () => {
       '> Next version: v2.1.0',
       '::set-output name=current::v2.0.0',
       '::set-output name=next::v2.1.0',
-      '::set-env name=NEXT_VERSION::v2.1.0',
+    ]);
+    exportVariableCalledWith(mockEnv, [
+      {name: 'NEXT_VERSION', val: 'v2.1.0'},
     ]);
   });
 });
