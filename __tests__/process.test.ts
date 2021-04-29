@@ -62,7 +62,9 @@ describe('execute', () => {
       '::endgroup::',
       '> Current version: v2.0.0',
       '> Next version: v2.0.1',
+      '',
       '::set-output name=current::v2.0.0',
+      '',
       '::set-output name=next::v2.0.1',
     ]);
   });
@@ -97,7 +99,9 @@ describe('execute', () => {
       '::endgroup::',
       '> Current version: v2.0.0',
       '> Next version: v3.0.0',
+      '',
       '::set-output name=current::v2.0.0',
+      '',
       '::set-output name=next::v3.0.0',
     ]);
   });
@@ -129,7 +133,9 @@ describe('execute', () => {
       '::endgroup::',
       '> Current version: v2.0.0',
       '> Next version: v2.1.0',
+      '',
       '::set-output name=current::v2.0.0',
+      '',
       '::set-output name=next::v2.1.0',
     ]);
     exportVariableCalledWith(mockEnv, [
