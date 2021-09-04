@@ -1,9 +1,9 @@
 # Get Next Version Action
 
 [![CI Status](https://github.com/technote-space/get-next-version-action/workflows/CI/badge.svg)](https://github.com/technote-space/get-next-version-action/actions)
-[![codecov](https://codecov.io/gh/technote-space/get-next-version-action/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-space/get-next-version-action)
+[![codecov](https://codecov.io/gh/technote-space/get-next-version-action/branch/main/graph/badge.svg)](https://codecov.io/gh/technote-space/get-next-version-action)
 [![CodeFactor](https://www.codefactor.io/repository/github/technote-space/get-next-version-action/badge)](https://www.codefactor.io/repository/github/technote-space/get-next-version-action)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/get-next-version-action/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/get-next-version-action/blob/main/LICENSE)
 
 *Read this in other languages: [English](README.md), [日本語](README.ja.md).*
 
@@ -32,7 +32,7 @@ e.g. Add release tag
 on:
   pull_request:
     branches:
-      - master
+      - main
     types: [closed]
 
 name: Add release tag
