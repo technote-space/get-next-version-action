@@ -1,8 +1,8 @@
-import { Context } from '@actions/github/lib/context';
 import type { Types } from '@technote-space/github-action-helper/';
-import { Version } from '@technote-space/github-action-version-helper';
+import { Context } from '@actions/github/lib/context';
 import { ApiHelper } from '@technote-space/github-action-helper';
 import { Logger } from '@technote-space/github-action-log-helper';
+import { Version } from '@technote-space/github-action-version-helper';
 import { getBreakingChangeNotes, getExcludeMessages, getMinorUpdateCommitTypes } from './misc';
 
 export const getCurrentVersion = async(helper: ApiHelper): Promise<string> => Version.getCurrentVersion(helper);
