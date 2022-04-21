@@ -1,8 +1,8 @@
-import {Context} from '@actions/github/lib/context';
-import {Utils, ApiHelper} from '@technote-space/github-action-helper';
-import {Logger} from '@technote-space/github-action-log-helper';
-import {exportVariable, getInput, setOutput} from '@actions/core' ;
-import {getCurrentVersion, getNextVersion} from './utils/version';
+import { Context } from '@actions/github/lib/context';
+import { Utils, ApiHelper } from '@technote-space/github-action-helper';
+import { Logger } from '@technote-space/github-action-log-helper';
+import { exportVariable, getInput, setOutput } from '@actions/core' ;
+import { getCurrentVersion, getNextVersion } from './utils/version';
 
 const setResult = (current: string, next: string): void => {
   setOutput('current', current);
