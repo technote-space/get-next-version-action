@@ -1,4 +1,5 @@
 /* eslint-disable no-magic-numbers */
+import { describe, expect, it } from 'vitest';
 import {ApiHelper} from '@technote-space/github-action-helper';
 import {Logger} from '@technote-space/github-action-log-helper';
 import {resolve} from 'path';
@@ -10,7 +11,7 @@ import {
   disableNetConnect,
   getApiFixture,
 } from '@technote-space/github-action-test-helper';
-import {getCurrentVersion, getNextVersion} from '../../src/utils/version';
+import {getCurrentVersion, getNextVersion} from './version';
 
 const rootDir        = resolve(__dirname, '../..');
 const fixtureRootDir = resolve(__dirname, '..', 'fixtures');

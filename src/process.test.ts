@@ -1,4 +1,5 @@
 /* eslint-disable no-magic-numbers */
+import { describe, it } from 'vitest';
 import {Logger} from '@technote-space/github-action-log-helper';
 import {resolve} from 'path';
 import nock from 'nock';
@@ -14,7 +15,7 @@ import {
   spyOnExportVariable,
   exportVariableCalledWith,
 } from '@technote-space/github-action-test-helper';
-import {execute} from '../src/process';
+import {execute} from './process';
 
 const rootDir        = resolve(__dirname, '..');
 const fixtureRootDir = resolve(__dirname, 'fixtures');
