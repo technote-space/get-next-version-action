@@ -1,8 +1,7 @@
 /* eslint-disable no-magic-numbers */
-import {ApiHelper} from '@technote-space/github-action-helper';
-import {Logger} from '@technote-space/github-action-log-helper';
-import {resolve} from 'path';
-import nock from 'nock';
+import { resolve } from 'path';
+import { ApiHelper } from '@technote-space/github-action-helper';
+import { Logger } from '@technote-space/github-action-log-helper';
 import {
   generateContext,
   testEnv,
@@ -10,7 +9,9 @@ import {
   disableNetConnect,
   getApiFixture,
 } from '@technote-space/github-action-test-helper';
-import {getCurrentVersion, getNextVersion} from '../../src/utils/version';
+import nock from 'nock';
+import { describe, expect, it } from 'vitest';
+import { getCurrentVersion, getNextVersion } from './version';
 
 const rootDir        = resolve(__dirname, '../..');
 const fixtureRootDir = resolve(__dirname, '..', 'fixtures');

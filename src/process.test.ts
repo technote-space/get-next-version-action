@@ -1,7 +1,6 @@
 /* eslint-disable no-magic-numbers */
-import {Logger} from '@technote-space/github-action-log-helper';
-import {resolve} from 'path';
-import nock from 'nock';
+import { resolve } from 'path';
+import { Logger } from '@technote-space/github-action-log-helper';
 import {
   generateContext,
   testEnv,
@@ -14,7 +13,9 @@ import {
   spyOnExportVariable,
   exportVariableCalledWith,
 } from '@technote-space/github-action-test-helper';
-import {execute} from '../src/process';
+import nock from 'nock';
+import { describe, it } from 'vitest';
+import { execute } from './process';
 
 const rootDir        = resolve(__dirname, '..');
 const fixtureRootDir = resolve(__dirname, 'fixtures');
@@ -139,7 +140,7 @@ describe('execute', () => {
       '::set-output name=next::v2.1.0',
     ]);
     exportVariableCalledWith(mockEnv, [
-      {name: 'NEXT_VERSION', val: 'v2.1.0'},
+      { name: 'NEXT_VERSION', val: 'v2.1.0' },
     ]);
   });
 });

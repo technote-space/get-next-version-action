@@ -1,8 +1,9 @@
-import {resolve} from 'path';
-import {isTargetEvent} from '@technote-space/filter-github-action';
-import {testEnv, getContext} from '@technote-space/github-action-test-helper';
-import {getMinorUpdateCommitTypes, getExcludeMessages, getBreakingChangeNotes} from '../../src/utils/misc';
-import {TARGET_EVENTS} from '../../src/constant';
+import { resolve } from 'path';
+import { isTargetEvent } from '@technote-space/filter-github-action';
+import { testEnv, getContext } from '@technote-space/github-action-test-helper';
+import { describe, expect, it } from 'vitest';
+import { TARGET_EVENTS } from '../constant';
+import { getMinorUpdateCommitTypes, getExcludeMessages, getBreakingChangeNotes } from './misc';
 
 const rootDir = resolve(__dirname, '../..');
 
