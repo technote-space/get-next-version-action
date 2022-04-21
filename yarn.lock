@@ -826,13 +826,21 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@technote-space/filter-github-action@^0.5.54", "@technote-space/filter-github-action@^0.5.62":
+"@technote-space/filter-github-action@^0.5.54":
   version "0.5.62"
   resolved "https://registry.yarnpkg.com/@technote-space/filter-github-action/-/filter-github-action-0.5.62.tgz#7fe276130dcf445e00d7aa94ab0f1773dc7ab3f0"
   integrity sha512-20FKkwcS1DAtTJw/W4dilwySoDa1+U8zEV49eN/NXUYKnvkJ/A2b7wckeqo9BA2ywKbXnonMXneRxX1ckQAYgw==
   dependencies:
     "@actions/core" "^1.6.0"
     "@actions/github" "^5.0.0"
+
+"@technote-space/filter-github-action@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@technote-space/filter-github-action/-/filter-github-action-0.6.0.tgz#ea359e613198aa3481f16471c2e0967c47af4dec"
+  integrity sha512-/ZCZtGCbl6w1ehn9nCmby9eClR0fH9ICGZMLaT07RnSFXL1B1rjBADJDfsdx4mXzX6kptXjOTWLhjhMU7mBTxA==
+  dependencies:
+    "@actions/core" "^1.6.0"
+    "@actions/github" "^5.0.1"
 
 "@technote-space/github-action-helper@^5.2.27", "@technote-space/github-action-helper@^5.3.4":
   version "5.3.4"
@@ -974,7 +982,7 @@
   dependencies:
     "@types/chai" "*"
 
-"@types/chai@*", "@types/chai@^4.3.0":
+"@types/chai@*", "@types/chai@^4.3.1":
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.3.1.tgz#e2c6e73e0bdeb2521d00756d099218e9f5d90a04"
   integrity sha512-/zPMqDkzSZ8t3VtxOa4KPq7uzzW978M9Tvh+j7GHKuo6k6GTLxPJ4J5gE5cjfJ26pnXst0N5Hax8Sr0T2Mi9zQ==
@@ -1819,9 +1827,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.84:
-  version "1.4.116"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.116.tgz#cf0b106d462a78e43ef33cc269caf2ad70e3c7a8"
-  integrity sha512-sy2ol5DTH0sy8xvAglyHFxsNFXFsOBfa6rGmrtjiSdQOp53ossspduOzU+5Lx23H7GxEjjvtSF36XqkajV6Z5A==
+  version "1.4.117"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.117.tgz#829d747deb9faa653cab72764a891ef523ba7413"
+  integrity sha512-ypZHxY+Sf/PXu7LVN+xoeanyisnJeSOy8Ki439L/oLueZb4c72FI45zXcK3gPpmTwyufh9m6NnbMLXnJh/0Fxg==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -4382,7 +4390,7 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vite@^2.9.1:
+vite@^2.9.5:
   version "2.9.5"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.5.tgz#08ef37ac7a6d879c96f328b791732c9a00ea25ea"
   integrity sha512-dvMN64X2YEQgSXF1lYabKXw3BbN6e+BL67+P3Vy4MacnY+UzT1AfkHiioFSi9+uiDUiaDy7Ax/LQqivk6orilg==
@@ -4395,17 +4403,17 @@ vite@^2.9.1:
     fsevents "~2.3.2"
 
 vitest@^0.9.3:
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.9.3.tgz#18e7f80bc27d0f370a524647d73ecfa0236011ac"
-  integrity sha512-hKjqdBI732cV5giNLERyAsaJBebstrX5mvTbZr+jUDYUHnX1O4DpAJcHtqBOutuBi7lVIGQ5IF8eWvHHqbCHBA==
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.9.4.tgz#220fb09a5b0861bbf6842681a976ff596d9be693"
+  integrity sha512-Em+EJb3keCr3GjyqnkxHuY7zMerEgLsN+m2nqsUcCzO7C4+Y0E7O7LXSNaODh3Gc/An3dqnoaAe/uLBrAJXUdQ==
   dependencies:
-    "@types/chai" "^4.3.0"
+    "@types/chai" "^4.3.1"
     "@types/chai-subset" "^1.3.3"
     chai "^4.3.6"
     local-pkg "^0.4.1"
     tinypool "^0.1.2"
     tinyspy "^0.3.2"
-    vite "^2.9.1"
+    vite "^2.9.5"
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"
