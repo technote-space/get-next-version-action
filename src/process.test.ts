@@ -8,6 +8,8 @@ import {
   getApiFixture,
   spyOnStdout,
   stdoutCalledWith,
+  spyOnSetOutput,
+  setOutputCalledWith,
   testChildProcess,
   getLogStdout,
   spyOnExportVariable,
@@ -47,6 +49,7 @@ describe('execute', () => {
     process.env.INPUT_GITHUB_TOKEN = 'token';
     process.env.INPUT_SET_ENV_NAME = '';
     const mockStdout               = spyOnStdout();
+    const mockOutput               = spyOnSetOutput();
 
     nock('https://api.github.com')
       .persist()
@@ -63,10 +66,10 @@ describe('execute', () => {
       '::endgroup::',
       '> Current version: v2.0.0',
       '> Next version: v2.0.1',
-      '',
-      '::set-output name=current::v2.0.0',
-      '',
-      '::set-output name=next::v2.0.1',
+    ]);
+    setOutputCalledWith(mockOutput, [
+      { name: 'current', value: 'v2.0.0' },
+      { name: 'next', value: 'v2.0.1' },
     ]);
   });
 
@@ -75,6 +78,7 @@ describe('execute', () => {
     process.env.INPUT_SET_ENV_NAME     = '';
     process.env.INPUT_EXCLUDE_MESSAGES = 'add new feature3';
     const mockStdout                   = spyOnStdout();
+    const mockOutput                   = spyOnSetOutput();
 
     nock('https://api.github.com')
       .persist()
@@ -100,10 +104,10 @@ describe('execute', () => {
       '::endgroup::',
       '> Current version: v2.0.0',
       '> Next version: v3.0.0',
-      '',
-      '::set-output name=current::v2.0.0',
-      '',
-      '::set-output name=next::v3.0.0',
+    ]);
+    setOutputCalledWith(mockOutput, [
+      { name: 'current', value: 'v2.0.0' },
+      { name: 'next', value: 'v3.0.0' },
     ]);
   });
 
@@ -111,6 +115,7 @@ describe('execute', () => {
     process.env.INPUT_GITHUB_TOKEN = 'token';
     const mockStdout               = spyOnStdout();
     const mockEnv                  = spyOnExportVariable();
+    const mockOutput               = spyOnSetOutput();
 
     nock('https://api.github.com')
       .persist()
@@ -134,13 +139,13 @@ describe('execute', () => {
       '::endgroup::',
       '> Current version: v2.0.0',
       '> Next version: v2.1.0',
-      '',
-      '::set-output name=current::v2.0.0',
-      '',
-      '::set-output name=next::v2.1.0',
     ]);
     exportVariableCalledWith(mockEnv, [
       { name: 'NEXT_VERSION', val: 'v2.1.0' },
+    ]);
+    setOutputCalledWith(mockOutput, [
+      { name: 'current', value: 'v2.0.0' },
+      { name: 'next', value: 'v2.1.0' },
     ]);
   });
 });
