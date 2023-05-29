@@ -48,7 +48,7 @@
     "@rollup/plugin-typescript": "^11.1.1",
     "@sindresorhus/tsconfig": "^3.0.1",
     "@technote-space/filter-github-action": "^0.6.13",
-    "@technote-space/github-action-helper": "^5.3.16",
+    "@technote-space/github-action-helper": "^5.3.17",
     "@technote-space/github-action-log-helper": "^0.2.19",
     "@technote-space/github-action-test-helper": "^0.11.17",
     "@technote-space/github-action-version-helper": "^0.6.12",

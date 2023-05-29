@@ -618,18 +618,18 @@
     "@actions/core" "^1.10.0"
     "@actions/github" "^5.1.1"
 
-"@technote-space/github-action-helper@^5.3.10", "@technote-space/github-action-helper@^5.3.16":
-  version "5.3.16"
-  resolved "https://registry.yarnpkg.com/@technote-space/github-action-helper/-/github-action-helper-5.3.16.tgz#acaaef304d6f30fdb5d469c2de4928cd59943199"
-  integrity sha512-ll1NQ48AlUNLhGBjb9+DFVrE3fOQvyv8SN4L37Hs3F+6WzAhui1zgEdxmPi3gq5DMmwEeX4ZLEu+izgTtRqIew==
+"@technote-space/github-action-helper@^5.3.10", "@technote-space/github-action-helper@^5.3.16", "@technote-space/github-action-helper@^5.3.17":
+  version "5.3.17"
+  resolved "https://registry.yarnpkg.com/@technote-space/github-action-helper/-/github-action-helper-5.3.17.tgz#e29d406ecd5cf8fd7551260092c18d8e720d03be"
+  integrity sha512-lrS8fLRX4PBLPLe4Ygz0MxBVYO9YjSSGrAdbg5V641H5uJTw+nD6akDTs/WnUCMUEF0pthP6cbzRnC7DABEckQ==
   dependencies:
     "@actions/core" "^1.10.0"
     "@actions/github" "^5.1.1"
-    "@technote-space/github-action-log-helper" "^0.2.18"
+    "@technote-space/github-action-log-helper" "^0.2.19"
     shell-escape "^0.2.0"
     sprintf-js "^1.1.2"
 
-"@technote-space/github-action-log-helper@^0.2.10", "@technote-space/github-action-log-helper@^0.2.18", "@technote-space/github-action-log-helper@^0.2.19":
+"@technote-space/github-action-log-helper@^0.2.10", "@technote-space/github-action-log-helper@^0.2.19":
   version "0.2.19"
   resolved "https://registry.yarnpkg.com/@technote-space/github-action-log-helper/-/github-action-log-helper-0.2.19.tgz#9f693dc5baccf3615f0bdde4ea3903df51574023"
   integrity sha512-WkGQOqdcSbMGtnU92loB+gY9dgbbBKViUIunOAiUy9hYRz3gCdE5blcj247cVoOzUhssPbVQJQKxG+DHg2plHQ==
