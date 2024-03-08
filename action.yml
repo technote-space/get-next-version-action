@@ -36,5 +36,5 @@ branding:
   color: 'green'
 
 runs:
-  using: node16
+  using: node21
   main: lib/main.js
